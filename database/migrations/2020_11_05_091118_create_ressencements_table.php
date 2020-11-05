@@ -17,8 +17,10 @@ class CreateRessencementsTable extends Migration
             $table->id();
             $table->integer('Poisson_id');
             $table->integer('Agent_id');
+            $table->integer('Campagne_id');
             $table->double('Quantite');
             $table->date('Date_ressencement');
+            $table->double('Quota');
             $table->integer('Etat')->default(0);
             $table->timestamps();
         });
