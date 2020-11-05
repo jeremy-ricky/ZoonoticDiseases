@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Outil;
+use App\Http\Requests\FormOutilRequest;
 class ControllerOutil extends Controller
 {
     /**
@@ -12,8 +13,9 @@ class ControllerOutil extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('Outils.index');
+    {   
+        $Outils = Outil::whereEtat(0)->get();
+        return view('Outils.index', compact('Outils'));
     }
 
     /**
@@ -22,8 +24,9 @@ class ControllerOutil extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('Outils.create');
+    {   
+        $Outil = new Outil;
+        return view('Outils.create', compact('Outil'));
     }
 
     /**
@@ -32,9 +35,15 @@ class ControllerOutil extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormOutilRequest $request)
     {
-        //
+        Outil::create([
+            'Nom'=>$request->Nom,
+            'Description'=>$request->Description
+        ]);
+
+        session()->flash('message', 'Enregistrement avec succes');
+        return redirect(route('Outils.index'));
     }
 
     /**
@@ -66,7 +75,7 @@ class ControllerOutil extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormOutilRequest $request, $id)
     {
         //
     }

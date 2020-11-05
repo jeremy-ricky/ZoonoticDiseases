@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Espece;
+use App\Http\Requests\FormEspeceRequest;
 class ControllerEspece extends Controller
 {
     /**
@@ -12,8 +13,9 @@ class ControllerEspece extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('Especes.index');
+    {   
+        $Especes = Espece::whereEtat(0)->get();
+        return view('Especes.index', compact('Especes'));
     }
 
     /**
@@ -22,8 +24,9 @@ class ControllerEspece extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('Especes.create');
+    {   
+        $Espece = new Espece;
+        return view('Especes.create', compact('Espece'));
     }
 
     /**
@@ -32,16 +35,21 @@ class ControllerEspece extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $Total = $request->val1 + $request->val2;
-        //$Total = 8;
-        echo $Total;
-    }
-
-    public function insert(Request $request){
-        $Total = $request->val1 + $request->val2;
-        echo $Total;
+    public function store(FormEspeceRequest $request)
+    {   
+        Espece::create([
+            'Caracteristique_distinctifs'=>$request->Caracteristique,
+            'Taille'=>$request->Taille,
+            'Habitat'=>$request->Habitat,
+            'Nutrition'=>$request->Nutrition,
+            'Comportement'=>$request->Comportement,
+            'Notes'=>$request->Note,
+            'Nom'=>$request->Nom,
+            'Picture'=>$request->Picture,
+            'Nom'=>$request->Nom
+        ]);
+        session()->flash('message', 'Un seul Client doit etre mis par defaut!');
+        return redirect(route('Especes.index'));
     }
 
     /**

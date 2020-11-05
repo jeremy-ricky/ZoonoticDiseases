@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Campagne;
+use App\Models\Embarquement;
+use App\Http\Requests\FormEmbarquementRequest;
 class ControllerEmbarquement extends Controller
 {
     /**
@@ -12,8 +14,9 @@ class ControllerEmbarquement extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('Embarquements.index');
+    {   
+        $Embarquements = Embarquement::whereEtat(0)->get();
+        return view('Embarquements.index', compact('Embarquements'));
     }
 
     /**
@@ -22,8 +25,8 @@ class ControllerEmbarquement extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('Embarquements.create');
+    {   $Embarquement = Embarquement::whereEtat(0)->get();
+        return view('Embarquements.create', compact('Embarquement'));
     }
 
     /**
@@ -32,9 +35,17 @@ class ControllerEmbarquement extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormEmbarquementRequest $request)
     {
-        //
+        Embarquement::create([
+            'Campagne_id'=>$request->Campagne,
+            'Port_id'=>$request->Port,
+            'Heure_embarquement'=>$request->HeureE,
+            'Date_embarquement'=>$request->DateE
+        ]);
+
+        session()->flash('message', 'Enregistrement avec succes');
+        return redirect(route('Embarquements.index'));
     }
 
     /**
@@ -66,7 +77,7 @@ class ControllerEmbarquement extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormEmbarquementRequest $request, $id)
     {
         //
     }
