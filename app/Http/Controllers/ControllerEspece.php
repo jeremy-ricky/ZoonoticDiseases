@@ -13,7 +13,7 @@ class ControllerEspece extends Controller
      */
     public function index()
     {
-        //
+        return view('Especes.index');
     }
 
     /**
