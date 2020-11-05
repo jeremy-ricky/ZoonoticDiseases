@@ -8,12 +8,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DataTables</h1>
+           <button type="button" class="btn btn-success swalDefaultSuccess">
+                  Launch Success Toas</button> 
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">DataTables</li>
+              <li class="breadcrumb-item active">List of speces</li>
             </ol>
           </div>
         </div>
@@ -29,7 +30,10 @@
               <!-- /.card-header -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <div class="row">
+                  <div class="col-sm-8"></div>
+                  <div class="col-sm-4" style="text-align: right;"><a href="{{route('Especes.create')}}"><button class="btn btn-info"><i class="fas fa-plus">Add New spece</i></button></a></div>
+                </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

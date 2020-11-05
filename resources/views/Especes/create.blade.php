@@ -24,6 +24,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
+        
         <div class="card card-primary">
           <div class="card-header">
             <h3 class="card-title">ENREGISTREMENT</h3>
@@ -32,13 +33,10 @@
               <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
             </div>
           </div>
-
-          {{ csrf_field() }}
-
-          {{ method_field('PUT') }}
-
-          @include('Especes._Form', ['ButtonSubmitTexe'=>'Modifier'])
-         
+     
+             {{ csrf_field() }}
+          @include('Especes._Form', ['ButtonSubmitTexe'=>'Enregistrer'])
+       
         <!-- /.card -->
       </div><!-- /.container-fluid -->
     </section>

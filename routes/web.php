@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/Welcome', 'ControllerLogin@Login')->name('Welcome');
 // Route Resource
 
 Route::resource('Especes', 'ControllerEspece');
