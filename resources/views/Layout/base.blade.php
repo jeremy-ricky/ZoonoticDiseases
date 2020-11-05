@@ -298,15 +298,57 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="{{route('Outils.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Gérer bateaux</p>
+                  <p>Gérer Outil</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="{{route('Embarquements.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gérer Embarquement</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/buttons.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gérer débarquement</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/sliders.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gérer acheteurs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/modals.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gérer campagne</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Gens du lac
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('AgentRessencements.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agent recesencement</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('Ressencements.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gérer Recesencement</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -366,7 +408,26 @@
     <!-- /.sidebar -->
   </aside>
 
-
+    <div class="row">
+      <div class="col-md-3"></div>
+      @if(session()->has('message'))
+      <div class="col-md-6">
+        <div class="alert alert-success alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                 {{ session()->get('message') }}
+        </div>
+      </div>
+     @elseif(session()->has('messageDelete')) 
+       <div class="col-md-6">
+        <div class="alert alert-danger alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                  {{ session()->get('messageDelete') }}
+        </div>
+      </div>
+     @endif
+    </div>
 
 
 
