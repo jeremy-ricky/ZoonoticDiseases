@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Ressencement;
+use App\Models\AgentRessencement;
+use App\Models\Campagne;
+use App\Http\Requests\FormRecessementRequest;
 class ControllerRessencement extends Controller
 {
     /**
@@ -12,8 +15,9 @@ class ControllerRessencement extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('Recessements.index');
+    {   
+        $Ressencements = Ressencement::whereEtat(0)->get();
+        return view('Recessements.index', compact('Ressencements'));
     }
 
     /**
@@ -22,8 +26,10 @@ class ControllerRessencement extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('Recessements.create');
+    {   
+        $AgentRessencements = AgentRessencement::whereEtat(0)->get();
+        $Recessement = new Ressencement;
+        return view('Recessements.create', compact('Recessement', 'AgentRessencements'));
     }
 
     /**
@@ -32,9 +38,18 @@ class ControllerRessencement extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormRecessementRequest $request)
     {
-        //
+        Ressencement::create([
+            'Poisson_id'=>$request->Poisson,
+            'Agent_id'=>$request->Agent,
+            'Campagne_id'=>$request->Campagne,
+            'Quantite'=>$request->Quantite,
+            'Date_ressencement'=>$request->DateR,
+            'Quota'=>$request->Quota
+        ]);
+        session()->flash('message', 'Un seul Client doit etre mis par defaut!');
+        return redirect(route('Ressencements.index'));
     }
 
     /**
@@ -66,7 +81,7 @@ class ControllerRessencement extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormRecessementRequest $request, $id)
     {
         //
     }

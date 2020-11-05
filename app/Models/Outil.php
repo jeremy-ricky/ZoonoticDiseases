@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Outil extends Model
 {
-    protected $fillable=['Nom', 'Description', 'Etat']
+    protected $fillable=['Nom', 'Description', 'Etat'];
 }

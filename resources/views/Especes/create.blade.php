@@ -33,10 +33,10 @@
               <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
             </div>
           </div>
-     
+          <form method="POST" action="{{route('Especes.store')}}">
              {{ csrf_field() }}
-          @include('Especes._Form', ['ButtonSubmitTexe'=>'Enregistrer'])
-       
+            @include('Especes._Form', ['ButtonSubmitTexe'=>'Enregistrer'])
+          </form>
         <!-- /.card -->
       </div><!-- /.container-fluid -->
     </section>

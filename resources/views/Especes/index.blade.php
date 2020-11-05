@@ -8,8 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-           <button type="button" class="btn btn-success swalDefaultSuccess">
-                  Launch Success Toas</button> 
+          
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -60,7 +59,7 @@
                         <td>{{$Espece->Notes}}</td>
                         <td>{{$Espece->Nom}}</td>
                         <td>{{$Espece->Picture}}</td>
-                        <td></td>
+                        <td>{{$Espece->Notes}}</td>
                        </tr>
                     @endforeach
                   </tbody>
