@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Poisson;
+use App\Http\Requests\FormPoissonRequest;
 
 class ControllerPoisson extends Controller
 {
@@ -34,9 +35,20 @@ class ControllerPoisson extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormPoissonRequest $request)
     {
-        //
+        Poisson::create([
+            'Nom'=>$request->Nom, 
+            'Espece_id'=>$request->Espece, 
+            'Nom_locaux'=>$request->nomLocaux,
+            'Aspect'=>$request->Aspect,
+            'Couleur'=>$request->Couleur,
+            'Taille'=>$request->Taille,
+            'Description'=>$request->Description,
+            'Picture'=>$request->Picture
+        ]);
+        session()->flash('message', 'Enregistrement avec succes');
+        return redirect(route('Poissons.index'));
     }
 
     /**
@@ -68,7 +80,7 @@ class ControllerPoisson extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormPoissonRequest $request, $id)
     {
         //
     }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Campagne;
+use App\Http\Requests\FormCampagneRequest;
 
 class ControllerCampagne extends Controller
 {
@@ -12,8 +14,9 @@ class ControllerCampagne extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('Campagnes.index');
+    {   
+        $Campagnes = Campagne::whereEtat(0)->get();
+        return view('Campagnes.index', compact('Campagnes'));
     }
 
     /**
@@ -32,9 +35,14 @@ class ControllerCampagne extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormCampagneRequest $request)
     {
-        //
+        Campagne::create([
+            'DateD'=>$request->dateDebit, 
+            'DateF'=>$request->dateFin
+        ]);
+        session()->flash('message', 'Enregistrement avec succes');
+        return redirect(route('Campagnes.index'));
     }
 
     /**
@@ -66,7 +74,7 @@ class ControllerCampagne extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormCampagneRequest $request, $id)
     {
         //
     }

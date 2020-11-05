@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Debarquement;
+use App\Http\Requests\FormDebarquementRequest;
 
 class ControllerDebarquement extends Controller
 {
@@ -13,7 +15,8 @@ class ControllerDebarquement extends Controller
      */
     public function index()
     {
-        return view('Debarquements.index');
+        $Debarquements = Debarquement::whereEtat(0)->get();
+        return view('Debarquements.index', compact('Debarquements'));
     }
 
     /**
@@ -32,9 +35,16 @@ class ControllerDebarquement extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormDebarquementRequest $request)
     {
-        //
+        Debarquement::create([
+            'Embarquement_id'=>$request->Embarqm, 
+            'Date_debarquement'=>$request->dateDebarqm,
+            'Heure_debarquement'=>$request->heureDebarqm, 
+            'Port_id'=>$request->Port
+        ]);
+        session()->flash('message', 'Enregistrement avec succes');
+        return redirect(route('Debarquements.index'));
     }
 
     /**
@@ -66,7 +76,7 @@ class ControllerDebarquement extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormDebarquementRequest $request, $id)
     {
         //
     }
