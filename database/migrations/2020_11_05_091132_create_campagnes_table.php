@@ -17,7 +17,6 @@ class CreateCampagnesTable extends Migration
             $table->id();
             $table->date('DateD');
             $table->date('DateF');
-            $table->double('Quota');
             $table->integer('Etat')->default(0);
             $table->timestamps();
         });
