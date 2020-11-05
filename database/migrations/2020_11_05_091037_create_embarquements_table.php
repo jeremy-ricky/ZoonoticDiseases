@@ -17,7 +17,7 @@ class CreateEmbarquementsTable extends Migration
             $table->id();
             $table->integer('Campagne_id');
             $table->date('Date_embarquement');
-            $table->date('Heure_embarquement');
+            $table->time('Heure_embarquement');
             $table->integer('Port_id');
             $table->integer('Etat')->default(0);
             $table->timestamps();
