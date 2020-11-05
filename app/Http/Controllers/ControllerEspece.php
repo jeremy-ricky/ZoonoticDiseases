@@ -23,7 +23,7 @@ class ControllerEspece extends Controller
      */
     public function create()
     {
-        //
+        return view('Especes.create');
     }
 
     /**
@@ -34,7 +34,14 @@ class ControllerEspece extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Total = $request->val1 + $request->val2;
+        //$Total = 8;
+        echo $Total;
+    }
+
+    public function insert(Request $request){
+        $Total = $request->val1 + $request->val2;
+        echo $Total;
     }
 
     /**
