@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Poisson;
 
 class ControllerPoisson extends Controller
 {
@@ -13,7 +14,8 @@ class ControllerPoisson extends Controller
      */
     public function index()
     {
-        return view('Poissons.index');
+        $Poissons = Poisson::whereEtat(0)->get();
+        return view('Poissons.index', compact('Poissons'));
     }
 
     /**
