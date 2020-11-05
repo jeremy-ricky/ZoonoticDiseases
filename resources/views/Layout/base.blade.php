@@ -192,7 +192,6 @@
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
-<<<<<<< HEAD
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -222,8 +221,6 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Especes
-=======
->>>>>>> 5f2a558b6ac82c6843799a197f14311966dd267d
               </p>
             </a>
           </li>
