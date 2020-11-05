@@ -192,7 +192,6 @@
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
-
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -222,7 +221,6 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Especes
-
               </p>
             </a>
           </li>
@@ -251,6 +249,12 @@
                 <a href="pages/layout/boxed.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gérer espèce</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('Poissons.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gérer poisson</p>
                 </a>
               </li>
             </ul>
@@ -308,11 +312,11 @@
               <li class="nav-item">
                 <a href="pages/UI/icons.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Gérer Embarquement</p>
+                  <p>Gérer embarquement</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/buttons.html" class="nav-link">
+                <a href="{{route('Debarquements.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gérer débarquement</p>
                 </a>
@@ -324,7 +328,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/modals.html" class="nav-link">
+                <a href="{{route('Campagnes.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gérer campagne</p>
                 </a>
