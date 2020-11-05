@@ -13,7 +13,7 @@ class ControllerSanction extends Controller
      */
     public function index()
     {
-        //
+        return view('Sanctions.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerSanction extends Controller
      */
     public function create()
     {
-        //
+        return view('Sanctions.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerSanction extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Sanctions.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerSanction extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Sanctions.edit');
     }
 
     /**

@@ -13,7 +13,7 @@ class ControllerZone extends Controller
      */
     public function index()
     {
-        //
+        return view('Zones.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerZone extends Controller
      */
     public function create()
     {
-        //
+        return view('Zones.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerZone extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Zones.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerZone extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Zones.edit');
     }
 
     /**

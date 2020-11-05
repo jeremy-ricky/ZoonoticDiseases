@@ -13,7 +13,7 @@ class ControllerCampagne extends Controller
      */
     public function index()
     {
-        //
+        return view('Campagnes.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerCampagne extends Controller
      */
     public function create()
     {
-        //
+        return view('Campagnes.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerCampagne extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Campagnes.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerCampagne extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Campagnes.edit');
     }
 
     /**

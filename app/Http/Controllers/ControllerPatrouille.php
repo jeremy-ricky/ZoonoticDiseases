@@ -13,7 +13,7 @@ class ControllerPatrouille extends Controller
      */
     public function index()
     {
-        //
+        return view('Patrouilles.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerPatrouille extends Controller
      */
     public function create()
     {
-        //
+        return view('Patrouilles.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerPatrouille extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Patrouilles.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerPatrouille extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Patrouilles.edit');
     }
 
     /**

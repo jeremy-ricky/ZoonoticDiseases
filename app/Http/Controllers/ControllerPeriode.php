@@ -13,7 +13,7 @@ class ControllerPeriode extends Controller
      */
     public function index()
     {
-        //
+        return view('Periodes.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerPeriode extends Controller
      */
     public function create()
     {
-        //
+        return view('Periodes.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerPeriode extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Periodes.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerPeriode extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Periodes.edit');
     }
 
     /**

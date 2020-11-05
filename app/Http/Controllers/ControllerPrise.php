@@ -13,7 +13,7 @@ class ControllerPrise extends Controller
      */
     public function index()
     {
-        //
+        return view('Prises.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerPrise extends Controller
      */
     public function create()
     {
-        //
+        return view('Prises.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerPrise extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Prises.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerPrise extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Prises.edit');
     }
 
     /**

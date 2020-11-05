@@ -9,11 +9,11 @@ class ControllerAssociationPecheur extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response  
      */
     public function index()
     {
-        //
+        return view('Associationpecheurs.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerAssociationPecheur extends Controller
      */
     public function create()
     {
-        //
+        return view('Associationpecheurs.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerAssociationPecheur extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Associationpecheurs.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerAssociationPecheur extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Associationpecheurs.edit');
     }
 
     /**

@@ -13,7 +13,7 @@ class ControllerNavire extends Controller
      */
     public function index()
     {
-        //
+        return view('Navires.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerNavire extends Controller
      */
     public function create()
     {
-        //
+        return view('Navires.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerNavire extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Navires.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerNavire extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Navires.edit');
     }
 
     /**

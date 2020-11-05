@@ -13,7 +13,7 @@ class ControllerDebarquement extends Controller
      */
     public function index()
     {
-        //
+        return view('Debarquements.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerDebarquement extends Controller
      */
     public function create()
     {
-        //
+        return view('Debarquements.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerDebarquement extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Debarquements.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerDebarquement extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Debarquements.edit');
     }
 
     /**

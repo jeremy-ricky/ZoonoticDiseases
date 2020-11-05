@@ -13,7 +13,7 @@ class ControllerEmbarquement extends Controller
      */
     public function index()
     {
-        //
+        return view('Embarquements.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerEmbarquement extends Controller
      */
     public function create()
     {
-        //
+        return view('Embarquements.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerEmbarquement extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Embarquements.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerEmbarquement extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Embarquements.edit');
     }
 
     /**

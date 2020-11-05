@@ -13,7 +13,7 @@ class ControllerDetail extends Controller
      */
     public function index()
     {
-        //
+        return view('Details.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ControllerDetail extends Controller
      */
     public function create()
     {
-        //
+        return view('Details.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ControllerDetail extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Details.show');
     }
 
     /**
@@ -56,7 +56,7 @@ class ControllerDetail extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('Details.edit');
     }
 
     /**
